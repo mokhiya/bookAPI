@@ -1,9 +1,9 @@
-from django.urls import path
 
-from book import views
-
-app_name = 'books'
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('authors/', views.author_list_create name='author_list_create')
+    path('admin/', admin.site.urls),
+    path('book/', include('book.urls', namespace='books')),
+
 ]
